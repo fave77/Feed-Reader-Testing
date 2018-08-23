@@ -62,4 +62,5 @@ gulp.task('default', ['clean'], () => {
     runSequence('minify-html', 'minify-js', 'minify-css', 'minify-image', 'copy-fonts');
 });
 
+/*watch for any file changes*/
 gulp.watch('./src/jasmine/spec/*.js', ['minify-js']);
