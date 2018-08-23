@@ -46,12 +46,6 @@ The repository already contains the **production code** in the `dist` folder alo
 npm install --global gulp-cli
 ```
 
-Next, install **gulp** as your devDependencies with the following command:
-
-```
-npm install --save-dev gulp@next
-```
-
 Finally, build the updated `dist` folder by typing the following command:
 
 ```
