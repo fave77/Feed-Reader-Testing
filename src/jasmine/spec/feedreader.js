@@ -63,9 +63,7 @@ $(function() {
     describe('Initial Entries', function() {
         /*Calling the 'loadFeed' function before running the spec*/
         beforeEach(function(done) {
-            loadFeed(0, function() {
-                done();
-            });
+            loadFeed(0, done);
         });
 
         /*  The following spec ensures that when the 'loadFeed'
@@ -86,9 +84,9 @@ $(function() {
          beforeEach(function(done) {
             $('.feed').empty();
             loadFeed(1, function() {
-                initialEntry = $('.feed').find(allFeeds.url);
+                initialEntry = $('.feed').html();
                 loadFeed(0, function() {
-                    finalEntry = $('.feed').find(allFeeds.url);
+                    finalEntry = $('.feed').html();
                     done();
                 });
             });
@@ -98,7 +96,7 @@ $(function() {
             by the 'loadFeed' function that the content actually changes.
         */
          it('should enable content switching', function(done) {
-            expect(initialEntry.html()).not.toBe(finalEntry.html());
+            expect(initialEntry).not.toBe(finalEntry);
             done();
         });
     });
