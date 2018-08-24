@@ -73,7 +73,7 @@ $(function() {
             a single .entry element within the '.feed' container.
         */
         it('should be in the .feed container', function(done) {
-            expect($('.feed .entry')).toBeDefined();
+            expect($('.feed .entry').length).toBeGreaterThan(0);
             done();
         });
 
@@ -98,7 +98,7 @@ $(function() {
             by the 'loadFeed' function that the content actually changes.
         */
          it('should enable content switching', function(done) {
-            expect(initialEntry).not.toBe(finalEntry);
+            expect(initialEntry.html()).not.toBe(finalEntry.html());
             done();
         });
     });
